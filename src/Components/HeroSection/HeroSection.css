@@ -1,0 +1,7 @@
+.hero-section {
+    height: 20%;
+    width: 100%;
+    background-image: url('src/assets/hops.jpeg');
+
+    background-position: center;
+}
