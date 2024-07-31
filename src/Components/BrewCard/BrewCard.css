@@ -1,0 +1,8 @@
+.brew_card {
+    width:80%;
+    height: 6rem;
+    border: 2px solid peru;
+    background-color: rgb(255, 224, 192);
+    border-radius: 1rem;
+    margin: 2rem;
+}
