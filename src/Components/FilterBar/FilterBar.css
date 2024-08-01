@@ -1,7 +1,11 @@
 .form_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-
+    color: white;
     height: 4rem;
+    background-color: rgba(1, 1, 29, 0.657);
 }
 
 form {
@@ -13,8 +17,8 @@ form {
 }
 
 .drop-down {
-    width: 3rem;
-    background-color: rgb(186, 241, 182);
-    height: 1rem;
+    width: 7rem;
+    border-radius: 0.2rem;
+    height: 2rem;
 
 }
