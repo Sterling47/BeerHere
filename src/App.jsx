@@ -65,13 +65,12 @@ const App = () => {
 
         </>
       )}
-      <Routes>
-        <Route path='/' element={<BrewContainer breweries={filteredBreweries} />} />
-        <Route path='/detail/:id' element={<DetailPage breweries={breweries} />} />
-        <Route path='/aboutMe' element={<AboutMe />} />
-        <Route path='/AllBreweries' element={<AllBrew breweries={filteredBreweries} />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path='/' element={<BrewContainer breweries={filteredBreweries} />} />
+          <Route path='/detail/:id' element={<DetailPage breweries={breweries} />} />
+          <Route path='/AllBreweries' element={<AllBrew breweries={breweries} onFilter={handleFilter} />} />
+        </Routes>
+      </div>
   )
 }
 
