@@ -5,8 +5,8 @@ const BrewCard = ({ name, type, city }) => {
   return (
     <div className='brew_card'>
         <h2>{name}</h2>
-        <p>{type}</p>
-        <p>{city}</p>
+        <p>Brew Type: {type}</p>
+        <p>City:{city}</p>
     </div>
   )
 }
