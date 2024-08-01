@@ -5,10 +5,9 @@ const NavBar = () => {
     return (
         <nav>
             <div>
-            <Link to='/'>BEERHERE</Link>
+            <Link to='/'><img className='logo' src='src/assets/beerherelogo.png'/></Link>
             </div>
-           <Link to='/AllBreweries'>All Breweries</Link>
-           <Link to='/aboutMe'>Contributor</Link>
+           <Link className='bttn' to='/AllBreweries'>All Breweries</Link>
         </nav>
     )
 }
