@@ -8,7 +8,7 @@ const BrewContainer = ({ breweries }) => {
     const BreweryCards = breweries.map(brewery => {
         return (
             <div key={brewery.id}>
-                <Link to={`/detail/${brewery.id}`}>
+                <Link  className='link' to={`/detail/${brewery.id}`}>
                     <BrewCard 
                     name={brewery.name}
                     type={brewery.brewery_type}
@@ -20,9 +20,11 @@ const BrewContainer = ({ breweries }) => {
     })
 
   return (
-    <div>
-    
-    {BreweryCards}
+    <div className='brew-wrapper' >
+        <h2>All Breweries</h2>
+        <div className='brew-container'>
+        {BreweryCards}
+        </div>
     </div>
   )
 }
