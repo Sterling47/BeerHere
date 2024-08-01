@@ -1,0 +1,11 @@
+.detail-section {
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background: rgba(128, 128, 128, .5);
+    border-radius: 0.2rem;
+}
+
