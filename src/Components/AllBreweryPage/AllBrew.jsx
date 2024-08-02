@@ -22,7 +22,7 @@ const AllBrew = ({ breweries, onFilter }) => {
   return (
     <div className='wrapper'>
       <div className='page-container'>
-        <h2>All Breweries</h2>
+        <h2 className='allBrewHeader'>All Breweries</h2>
         <FilterBar breweries={breweries} onFilter={handleFilter} />
         {Object.keys(groupedBreweries).sort().map(char => (
           <div key={char}>
