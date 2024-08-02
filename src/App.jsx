@@ -2,10 +2,8 @@ import { React, useState, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import BrewContainer from './Components/BrewContainer/BrewContainer';
 import NavBar from './Components/NavBar/NavBar';
-
 import FilterBar from './Components/FilterBar/FilterBar';
 import DetailPage from './Components/DetailPage/DetailPage';
-import AboutMe from './Components/AboutMe/AboutMe';
 import AllBrew from './Components/AllBreweryPage/AllBrew';
 import HeroSection from './Components/HeroSection/HeroSection';
 
