@@ -34,3 +34,25 @@ nav {
     
     background-color: rgba(128, 128, 128, 0.3);
 }
+
+@media (max-width: 430px) {
+    /* iPhone  */
+    .logo {
+        width: 7rem;
+        height: 7rem;
+    }
+    .bttn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* iPad */
+    .logo {
+        width: 8rem;
+        height: 8rem;
+    }
+    .bttn {
+        font-size: 0.9rem;
+    }
+}
