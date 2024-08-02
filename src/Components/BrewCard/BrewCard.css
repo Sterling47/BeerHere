@@ -16,3 +16,22 @@
     color: aliceblue;
 }
 
+@media (max-width: 430px) {
+    /* iPhone 14 */
+    .brew_card {
+        width: 15rem;
+        height: 15rem;
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* iPad */
+    .brew_card {
+        width: 18rem;
+        height: 18rem;
+        margin: 1.5rem;
+        padding: 0.75rem;
+    }
+}

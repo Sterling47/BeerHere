@@ -22,3 +22,28 @@
     box-sizing: border-box;
     margin: 2rem;
 }
+
+@media (max-width: 430px) {
+    /* iPhone*/
+    .wrapper {
+        margin-top: 3rem;
+    }
+    .page-container {
+        max-width: 90%;
+        margin: 1rem;
+    }
+    .allBrewHeader {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* iPad */
+    .wrapper {
+        margin-top: 3.5rem;
+    }
+    .page-container {
+        max-width: 75%;
+        margin: 1.5rem;
+    }
+}

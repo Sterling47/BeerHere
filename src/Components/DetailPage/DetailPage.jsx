@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom'
 import '../DetailPage/DetailPage.css'
 
@@ -10,7 +11,7 @@ const DetailPage = ({ breweries }) => {
   if (!singleBrewery) {
     return <div>Brewery not found</div>;
   }
-  const { name, brewery_type, address_1, address_2, address_3, city, state, postal_code, country, phone, website_url } = singleBrewery;
+  const { name, brewery_type, address_1, address_2, address_3, city, state, postal_code, phone, website_url } = singleBrewery;
   return (
     <div className='container'>
       <div className='detail-section'>
@@ -23,5 +24,23 @@ const DetailPage = ({ breweries }) => {
     </div>
   )
 }
+
+DetailPage.propTypes = {
+  breweries: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      brewery_type: PropTypes.string.isRequired,
+      address_1: PropTypes.string,
+      address_2: PropTypes.string,
+      address_3: PropTypes.string,
+      city: PropTypes.string.isRequired,
+      state: PropTypes.string,
+      postal_code: PropTypes.string,
+      phone: PropTypes.string,
+      website_url: PropTypes.string,
+    })
+  ).isRequired,
+};
 
 export default DetailPage

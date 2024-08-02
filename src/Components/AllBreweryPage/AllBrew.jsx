@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import BrewCard from '../BrewCard/BrewCard';
 import FilterBar from '../FilterBar/FilterBar';
@@ -21,7 +22,7 @@ const AllBrew = ({ breweries, onFilter }) => {
   return (
     <div className='wrapper'>
       <div className='page-container'>
-        <h2>All Breweries</h2>
+        <h2 className='allBrewHeader'>All Breweries</h2>
         <FilterBar breweries={breweries} onFilter={handleFilter} />
         {Object.keys(groupedBreweries).sort().map(char => (
           <div key={char}>
@@ -52,6 +53,19 @@ const groupBreweriesByFirstChar = (breweries) => {
     grouped[firstChar].push(brewery);
   });
   return grouped;
+};
+
+
+AllBrew.propTypes = {
+  breweries: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      brewery_type: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onFilter: PropTypes.func.isRequired,
 };
 
 export default AllBrew;

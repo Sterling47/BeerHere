@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import '../FilterBar/FilterBar.css';
 
 const FilterBar = ({ breweries, onFilter }) => {
@@ -64,6 +65,17 @@ const FilterBar = ({ breweries, onFilter }) => {
       </form>
     </div>
   );
+};
+
+FilterBar.propTypes = {
+  breweries: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onFilter: PropTypes.func.isRequired,
 };
 
 export default FilterBar;
