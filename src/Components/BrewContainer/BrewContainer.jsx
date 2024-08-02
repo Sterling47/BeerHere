@@ -1,8 +1,8 @@
-import React from 'react'
-import '../BrewContainer/BrewContainer.css'
-import BrewCard from '../BrewCard/BrewCard'
-import FilterBar from '../FilterBar/FilterBar'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../BrewContainer/BrewContainer.css';
+import BrewCard from '../BrewCard/BrewCard';
+import { Link } from 'react-router-dom';
 
 const BrewContainer = ({ breweries }) => {
     const BreweryCards = breweries.map(brewery => {
@@ -28,5 +28,16 @@ const BrewContainer = ({ breweries }) => {
     </div>
   )
 }
+
+BrewContainer.propTypes = {
+    breweries: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        brewery_type: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  };
 
 export default BrewContainer
