@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <nav className='navbar'>
             <div>
-            <Link to='/'><img className='logo' src='public/assets/beerherelogo.png'/></Link>
+            <Link to='/'><img className='logo' src='/public/assets/beerherelogo.png'/></Link>
             </div>
            <Link className='bttn' to='/AllBreweries'>All Breweries</Link>
         </nav>
