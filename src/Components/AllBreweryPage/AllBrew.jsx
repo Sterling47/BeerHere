@@ -14,7 +14,7 @@ const AllBrew = ({ breweries, onFilter }) => {
 
   const handleFilter = (filtered) => {
     setFilteredBreweries(filtered);
-    onFilter(filtered); // Update the filtered breweries in App component as well
+    onFilter(filtered); 
   };
 
   const groupedBreweries = groupBreweriesByFirstChar(filteredBreweries);
