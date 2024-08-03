@@ -1,5 +1,5 @@
 .brew-wrapper {
-    background-image: url('src/assets/brewpub.jpg');
+    background-image: url('public/assets/brewpub.jpg');
     background-position: center;
 }
 
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('src/assets/beerKegs.jpg');
+    background-image: url('public/assets/beerKegs.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@
     .container {
         height: auto;
         padding: 1rem;
-        background-image: url('src/assets/hopsBg.jpg');
+        background-image: url('public/assets/hopsbg.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
