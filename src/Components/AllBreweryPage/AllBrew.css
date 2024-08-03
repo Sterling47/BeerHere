@@ -24,7 +24,6 @@
 }
 
 @media (max-width: 430px) {
-    /* iPhone*/
     .wrapper {
         margin-top: 3rem;
     }
@@ -35,10 +34,12 @@
     .allBrewHeader {
         display: none;
     }
+    .filterbar {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    /* iPad */
     .wrapper {
         margin-top: 3.5rem;
     }

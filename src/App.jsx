@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import BrewContainer from './Components/BrewContainer/BrewContainer';
 import NavBar from './Components/NavBar/NavBar';
@@ -8,8 +8,9 @@ import AllBrew from './Components/AllBreweryPage/AllBrew';
 import HeroSection from './Components/HeroSection/HeroSection';
 
 const App = () => {
-  const [breweries, setBreweries] = useState([])
-  const [filteredBreweries, setFilteredBreweries] = useState([])
+  const [breweries, setBreweries] = useState([]);
+  const [filteredBreweries, setFilteredBreweries] = useState([]);
+  const [error, setError] = useState(null); 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -22,6 +23,9 @@ const App = () => {
     while (fetchMore) {
       try {
         const response = await fetch(`https://api.openbrewerydb.org/v1/breweries?per_page=${perPage}&page=${page}`);
+        if (!response.ok) {
+          throw new Error('Failed to load breweries');
+        }
         const data = await response.json();
         allBreweries = [...allBreweries, ...data];
         if (data.length < perPage) {
@@ -31,27 +35,28 @@ const App = () => {
         }
       } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
+        setError('Failed to load breweries'); 
         fetchMore = false;
       }
     }
-    console.log('All Breweries', allBreweries)
+    // console.log('All Breweries', allBreweries);
     const threeCities = allBreweries.filter(brewery =>
       brewery.city === 'Atlanta' ||
       brewery.city === 'Denver' ||
       brewery.city === 'Phoenix'
-    )
-    console.log('Breweries', threeCities)
+    );
+    // console.log('Breweries', threeCities);
     setBreweries(threeCities);
-    setFilteredBreweries(threeCities)
+    setFilteredBreweries(threeCities);
   };
 
   const handleFilter = (filtered) => {
-    setFilteredBreweries(filtered)
-  }
+    setFilteredBreweries(filtered);
+  };
 
   useEffect(() => {
-    getBeer()
-  }, [])
+    getBeer();
+  }, []);
 
   return (
     <div className='App'>
@@ -59,17 +64,17 @@ const App = () => {
       {isHomePage && (
         <>
           <HeroSection />
-          <FilterBar  breweries={breweries} onFilter={handleFilter}/>
-
+          <FilterBar breweries={breweries} onFilter={handleFilter} />
         </>
       )}
-        <Routes>
-          <Route path='/' element={<BrewContainer breweries={filteredBreweries} />} />
-          <Route path='/detail/:id' element={<DetailPage breweries={breweries} />} />
-          <Route path='/AllBreweries' element={<AllBrew breweries={breweries} onFilter={handleFilter} />} />
-        </Routes>
-      </div>
-  )
+      {error && <div className="error-message">{error}</div>} 
+      <Routes>
+        <Route path='/' element={<BrewContainer breweries={filteredBreweries} />} />
+        <Route path='/detail/:id' element={<DetailPage breweries={breweries} />} />
+        <Route path='/AllBreweries' element={<AllBrew breweries={breweries} onFilter={handleFilter} />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
