@@ -25,7 +25,7 @@ const FilterBar = ({ breweries, onFilter }) => {
     }
 
     onFilter(filteredBreweries);
-  }, [selectedCity, selectedType, searchTerm, breweries, onFilter]);
+  }, [selectedCity, selectedType, searchTerm, breweries]);
 
   const handleCitySelect = (e) => {
     setSelectedCity(e.target.value);
