@@ -7,15 +7,13 @@ import { Link } from 'react-router-dom';
 const BrewContainer = ({ breweries }) => {
     const BreweryCards = breweries.map(brewery => {
         return (
-            <div key={brewery.id}>
-                <Link  className='link' to={`/detail/${brewery.id}`}>
+                  <Link  key={brewery.id} className='link' to={`/detail/${brewery.id}`}>
                     <BrewCard 
                     name={brewery.name}
                     type={brewery.brewery_type}
                     city={brewery.city}
                     /> 
-                </Link>
-            </div> 
+                  </Link> 
         )
     })
 
