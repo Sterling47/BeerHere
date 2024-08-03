@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '/src/Components/NavBar/Navbar.css'
 const NavBar = () => {
     return (
-        <nav>
+        <nav className='navbar'>
             <div>
             <Link to='/'><img className='logo' src='src/assets/beerherelogo.png'/></Link>
             </div>
