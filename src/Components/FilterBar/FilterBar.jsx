@@ -24,7 +24,7 @@ const FilterBar = ({ breweries, onFilter }) => {
       );
     }
 
-    onFilter(filteredBreweries);
+    onFilter(filteredBreweries, selectedType);
   }, [selectedCity, selectedType, searchTerm, breweries]);
 
   const handleCitySelect = (e) => {
@@ -43,7 +43,6 @@ const FilterBar = ({ breweries, onFilter }) => {
   return (
     <div className='form_wrapper'>
       <form>
-        <h3 className='.filterbar'>Filter Breweries</h3>
         <select className='drop-down' onChange={handleCitySelect} value={selectedCity}>
           <option value=''>Select A City</option>
           {cities.map(city => (

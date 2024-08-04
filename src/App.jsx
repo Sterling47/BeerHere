@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import BrewContainer from './Components/BrewContainer/BrewContainer';
 import NavBar from './Components/NavBar/NavBar';
@@ -10,7 +10,9 @@ import HeroSection from './Components/HeroSection/HeroSection';
 const App = () => {
   const [breweries, setBreweries] = useState([]);
   const [filteredBreweries, setFilteredBreweries] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null); 
+  const [filterType, setFilterType] = useState(''); 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -39,19 +41,20 @@ const App = () => {
         fetchMore = false;
       }
     }
-    // console.log('All Breweries', allBreweries);
+
     const threeCities = allBreweries.filter(brewery =>
       brewery.city === 'Atlanta' ||
       brewery.city === 'Denver' ||
       brewery.city === 'Phoenix'
     );
-    // console.log('Breweries', threeCities);
     setBreweries(threeCities);
     setFilteredBreweries(threeCities);
+    setLoading(false);
   };
 
-  const handleFilter = (filtered) => {
+  const handleFilter = (filtered, type) => {
     setFilteredBreweries(filtered);
+    setFilterType(type);
   };
 
   useEffect(() => {
@@ -67,9 +70,9 @@ const App = () => {
           <FilterBar breweries={breweries} onFilter={handleFilter} />
         </>
       )}
-      {error && <div className="error-message">{error}</div>} 
+      {error && <div className="error-message">{error}</div>}
       <Routes>
-        <Route path='/' element={<BrewContainer breweries={filteredBreweries} />} />
+        <Route path='/' element={<BrewContainer breweries={filteredBreweries} loading={loading} filterType={filterType} />} />
         <Route path='/detail/:id' element={<DetailPage breweries={breweries} />} />
         <Route path='/AllBreweries' element={<AllBrew breweries={breweries} onFilter={handleFilter} />} />
       </Routes>

@@ -4,7 +4,23 @@ import '../BrewContainer/BrewContainer.css';
 import BrewCard from '../BrewCard/BrewCard';
 import { Link } from 'react-router-dom';
 
-const BrewContainer = ({ breweries }) => {
+const BrewContainer = ({ breweries, loading, filterType }) => {
+  if (loading) {
+    return (
+      <div className='brew-wrapper'>
+      <h2>Loading...</h2>
+      </div>
+    )
+  }
+
+  if (breweries.length === 0) {
+    return (
+      <div className='brew-wrapper'>
+      <h2>There are no {filterType} breweries!</h2>
+      </div>
+    )
+  }
+
     const BreweryCards = breweries.map(brewery => {
         return (
                   <Link  key={brewery.id} className='link' to={`/detail/${brewery.id}`}>

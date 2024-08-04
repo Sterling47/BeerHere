@@ -1,11 +1,12 @@
 .wrapper {
     width: 100%;
-    height: calc(100% - 4rem);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start; 
     background-image: url('/public/assets/hopsbg.jpg');
     background-position: center;
+    background-size: contain;
     overflow-y: auto; 
     margin-top: 4rem; 
     box-sizing: border-box; 
