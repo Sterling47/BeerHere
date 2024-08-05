@@ -18,8 +18,10 @@
  5. run: npm run dev
  6. Enjoy!
 
-## Preview
 
+
+## Preview
+![Preview](public/assets/beerhere-screenshot.png)
 
 ## Context
 This is my final solo project for the end of Mod 3. This project showcases my understanding and use of React.js library, React-router, GET and  POST request, passing props and acontrolled form. I incorporate these concepts in my application by using an api to fetch data, display and making it manipulatable through filtering and searhing. I add the use of router to route to the specific clicked brewery detail page updating the url with the correct brewery_id.

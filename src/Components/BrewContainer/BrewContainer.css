@@ -1,8 +1,7 @@
 .brew-wrapper {
     background-image: url('/public/assets/brewpub.jpg');
     background-position: center;
-    background-size: cover;
-    height: 50vh;
+
 }
 
 .brew-wrapper h2 {
