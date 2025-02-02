@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import '../DetailPage/DetailPage.css'
 
 const DetailPage = ({ breweries }) => {
@@ -15,12 +15,20 @@ const DetailPage = ({ breweries }) => {
   return (
     <div className='container'>
       <div className='detail-section'>
-        <h2>{name}</h2>
-        <p>Brewery Type: {brewery_type}</p>
-        <p>This brewery is Located in {city}, {state}</p>
-        <p>Main Location: {address_1}, {city}, {state} - {postal_code}</p>
-        <p>Phone: {phone}</p>
+        <h2 className='brewery-name'>{name}</h2>
+        <p className='brewery-type'><strong>Brewery Type:</strong> {brewery_type}</p>
+        <p className='brewery-location'><strong>Location:</strong> {city}, {state}</p>
+        <p className='brewery-address'><strong>Address:</strong> {address_1}, {city}, {state} - {postal_code}</p>
+        {address_2 && <p className='brewery-address'><strong>Address 2:</strong> {address_2}</p>}
+        {address_3 && <p className='brewery-address'><strong>Address 3:</strong> {address_3}</p>}
+        <p className='brewery-phone'><strong>Phone Number:</strong> {phone}</p>
+        {website_url && <p className='brewery-website'><strong>Website:</strong> <a href={website_url} target='_blank' rel='noopener noreferrer'>{website_url}</a></p>}
       </div>
+      
+      <Link to="/" className='home-button'>
+        Home
+      </Link>
+        
     </div>
   )
 }
