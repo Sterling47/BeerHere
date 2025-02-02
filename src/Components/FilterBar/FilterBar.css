@@ -4,7 +4,7 @@
     justify-content: center;
     width: 100%;
     color: white;
-    height: 4rem;
+
 }
 
 form {
@@ -13,6 +13,7 @@ form {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    margin: 1.5rem;
 }
 
 .drop-down {

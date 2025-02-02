@@ -1,7 +1,9 @@
 .brew-wrapper {
-    background-image: url('/public/assets/brewpub.jpg');
+    /* background-image: url('src/assets/brewpub.jpg'); */
     background-position: center;
-
+    height: 100vh;
+    background-color: gray;
+    overflow: scroll;
 }
 
 .brew-wrapper h2 {
@@ -13,7 +15,8 @@
 .brew-container {
     display: flex;
     flex-wrap: wrap;
-    
+    align-items: center;
+    justify-content: center;
     overflow: scroll ;
 
 }
