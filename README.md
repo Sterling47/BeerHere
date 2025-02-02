@@ -1,4 +1,5 @@
-## Overview
+# BeerHere
+
  Beer Here is a React application designed to help users discover breweries in Phoenix, Atlanta, and Denver. The app features a BrewContainer component that maps over a list of breweries, displaying each one with details such as name, type, and city in BrewCard components. Users can explore and search for specific types of breweries and click on them to get more information for breweries in the city of their choosing! 
 
 ## Tech 
